@@ -4,6 +4,7 @@ const {Schema} = mongoose
 
 const userSchema = new Schema ({
     title: String,
+    poster: String,
     content : String,
     author : String,
     date : Date,
