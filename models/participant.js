@@ -11,6 +11,10 @@ const userSchema = new Schema ({
         type : mongoose.ObjectId,
         ref : "EVENTS"
     },
+    address : String,
+    phone : String,
+    city : String,
+    zip : String
 })
 
 const PART = mongoose.model("PARTICIPANT",userSchema)

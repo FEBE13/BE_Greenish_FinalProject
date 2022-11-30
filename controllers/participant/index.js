@@ -15,6 +15,14 @@ module.exports = {
             data
         })
     },
+    deleteParticipant : async (req,res) =>{
+        const {id} = req.params
+        const data = await PARTICIPANTS.findByIdAndDelete(id)
+        res.json({
+            Message : "get all data participant by event",
+            data
+        })
+    },
     getParticipantbyUserId : async (req,res) =>{
         const {id} = req.params
         const data = await PARTICIPANTS.find({id_user : id}).populate("id_user","name").populate("id_event","name")
