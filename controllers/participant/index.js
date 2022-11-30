@@ -1,7 +1,7 @@
 const PARTICIPANTS = require('../../models/participant')
 module.exports = {
     getAllparticipant: async (req,res)=>{
-        const data = await PARTICIPANTS.find({},"-__v").populate("id_user","name").populate("id_event","name")
+        const data = await PARTICIPANTS.find({},"-__v").populate("id_user","name").populate("id_user","email").populate("id_event","name")
         res.json({
             Message : "get all data participant",
             data
